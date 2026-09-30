@@ -435,6 +435,35 @@ export default {
 
   'sell.subtabs.listings': 'Mis publicaciones',
   'sell.subtabs.messages': 'Mensajes',
+  'sell.subtabs.myBusiness': 'Mi negocio',
+
+  // Negocio (horario del mercado móvil + temas)
+  'business.heading': 'Tu horario',
+  'business.sub': 'Agrega las fechas y lugares donde estarás vendiendo. Los compradores los verán en Buscar comida.',
+  'business.subForNamed': '{name} — agrega las fechas y lugares donde estarás vendiendo. Los compradores los verán en Buscar comida.',
+  'business.addStop': 'Agregar una parada',
+  'business.editStop': 'Editar parada',
+  'business.saveStop': 'Guardar parada',
+  'business.confirmRemove': '¿Quitar esta parada?',
+  'business.upcomingHeading': 'Próximas paradas',
+  'business.upcomingEmpty': 'Aún no hay paradas. Agrega una arriba.',
+  'business.pastHeading': 'Paradas anteriores',
+  'business.field.date': 'Fecha',
+  'business.field.address': 'Dirección',
+  'business.field.addressPlaceholder': 'ej. 1030 Albany Ave, Hartford, CT',
+  'business.field.neighborhood': 'Barrio',
+  'business.field.startTime': 'Hora de inicio',
+  'business.field.endTime': 'Hora de cierre',
+  'business.field.theme': 'Tema (opcional)',
+  'business.field.themePlaceholder': 'ej. día doble de SNAP, demostración de chef',
+  'business.field.notes': 'Notas (opcional)',
+  'business.field.notesPlaceholder': 'Algo que los compradores deberían saber',
+
+  // Estadísticas por parada
+  'insights.byStopHeading': 'Vistas por parada',
+  'insights.byStopNote': 'Cuáles de tus paradas recientes atrajeron a más compradores.',
+  'insights.byStopUnassigned': 'Otras (sin parada asignada)',
+  'insights.messagesCount': '{count} mensajes',
 
   'messaging.defaultSeller': 'Vendedor',
   'messaging.demoInquiry': '¡Hola! ¿Todavía tienes disponible {crop}?',

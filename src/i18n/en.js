@@ -430,6 +430,35 @@ export default {
 
   'sell.subtabs.listings': 'My listings',
   'sell.subtabs.messages': 'Messages',
+  'sell.subtabs.myBusiness': 'My business',
+
+  // Business (mobile market schedule + themes)
+  'business.heading': 'Your schedule',
+  'business.sub': 'Add the dates and spots where you’ll be selling. Buyers see them in Find food.',
+  'business.subForNamed': '{name} — add the dates and spots where you’ll be selling. Buyers see them in Find food.',
+  'business.addStop': 'Add a stop',
+  'business.editStop': 'Edit stop',
+  'business.saveStop': 'Save stop',
+  'business.confirmRemove': 'Remove this stop?',
+  'business.upcomingHeading': 'Upcoming stops',
+  'business.upcomingEmpty': 'No upcoming stops yet. Add one above.',
+  'business.pastHeading': 'Past stops',
+  'business.field.date': 'Date',
+  'business.field.address': 'Address',
+  'business.field.addressPlaceholder': 'e.g. 1030 Albany Ave, Hartford, CT',
+  'business.field.neighborhood': 'Neighborhood',
+  'business.field.startTime': 'Start time',
+  'business.field.endTime': 'End time',
+  'business.field.theme': 'Theme (optional)',
+  'business.field.themePlaceholder': 'e.g. SNAP double day, chef demo',
+  'business.field.notes': 'Notes (optional)',
+  'business.field.notesPlaceholder': 'Anything buyers should know',
+
+  // Per-stop insights
+  'insights.byStopHeading': 'Views by stop',
+  'insights.byStopNote': 'Which of your recent stops brought the most buyers.',
+  'insights.byStopUnassigned': 'Other (not tagged to a stop)',
+  'insights.messagesCount': '{count} messages',
 
   'messaging.defaultSeller': 'Seller',
   'messaging.demoInquiry': 'Hi! Is the {crop} still available?',

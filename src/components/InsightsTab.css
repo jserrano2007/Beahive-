@@ -143,3 +143,56 @@
   margin: 0;
   font-size: 15px;
 }
+
+.insights-note {
+  margin: -4px 0 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.insights-stop-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.insights-stop-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--surface-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-soft);
+}
+
+.insights-stop-label {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.insights-stop-title {
+  font-weight: 700;
+}
+
+.insights-stop-date {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.insights-stop-metrics {
+  flex-shrink: 0;
+  display: inline-flex;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 600;
+}

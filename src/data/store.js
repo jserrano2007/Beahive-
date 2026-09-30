@@ -20,6 +20,8 @@ const WEATHER_CACHE_KEY = 'freshmile_weather_cache'
 const SHARED_REPORTS_KEY = 'freshmile_shared_reports'
 const COMMUNITY_POSTS_KEY = 'freshmile_community_posts'
 const COMMUNITY_SEEDED_KEY = 'freshmile_community_seeded'
+const BUSINESS_PROFILE_KEY = 'freshmile_business_profile'
+const BUSINESS_SEEDED_KEY = 'freshmile_business_seeded'
 
 function t(lang, key, vars) {
   const dict = LOCALES[lang] ?? LOCALES.en
@@ -127,9 +129,41 @@ const DEMO_INSIGHT_LISTINGS = [
   { id: 'demo-business-listing-3', label: 'Winter squash' },
 ]
 
+const DEMO_STOP_TEMPLATES = [
+  { dayOffset: -2, address: '1030 Albany Ave, Hartford, CT', neighborhood: 'Upper Albany', startTime: '15:00', endTime: '19:00', theme: 'SNAP double day', notes: 'Corner lot next to the library.' },
+  { dayOffset: 0, address: '99 Park St, Hartford, CT', neighborhood: 'Frog Hollow', startTime: '10:00', endTime: '14:00', theme: 'Kids activities + chef demo', notes: 'Bring reusable bags.' },
+  { dayOffset: 3, address: '800 Main St, Hartford, CT', neighborhood: 'Downtown', startTime: '11:00', endTime: '15:00', theme: 'Fall harvest festival', notes: '' },
+  { dayOffset: 5, address: '2007 Broad St, Hartford, CT', neighborhood: 'Barry Square', startTime: '14:00', endTime: '18:00', theme: '', notes: '' },
+]
+
+function buildDemoScheduleStops() {
+  const now = getNow()
+  return DEMO_STOP_TEMPLATES.map((tpl, i) => ({
+    id: `demo-stop-${i + 1}`,
+    date: toDateStr(addDays(now, tpl.dayOffset)),
+    address: tpl.address,
+    neighborhood: tpl.neighborhood,
+    startTime: tpl.startTime,
+    endTime: tpl.endTime,
+    theme: tpl.theme,
+    notes: tpl.notes,
+    demo: true,
+  }))
+}
+
 function buildDemoEvents() {
   const now = getNow()
   const events = []
+  // Weight past demo events toward past stops so the "views by stop" break-
+  // down has a clear winner (Albany Ave / SNAP double day) that tells a story.
+  const pastStops = buildDemoScheduleStops().filter((s) => s.date <= toDateStr(now))
+  const pickStopFor = (offset) => {
+    if (pastStops.length === 0) return null
+    const stop = pastStops.find((s) => s.date === toDateStr(addDays(now, -offset)))
+    if (stop) return stop.id
+    // Fallback: bias toward the most recent past stop.
+    return pastStops[pastStops.length - 1].id
+  }
 
   for (let offset = 6; offset >= 0; offset--) {
     const date = toDateStr(addDays(now, -offset))
@@ -142,6 +176,7 @@ function buildDemoEvents() {
           listingId: listing.id,
           label: listing.label,
           date,
+          stopId: v % 3 === 0 ? null : pickStopFor(offset),
         })
       }
     })
@@ -153,6 +188,7 @@ function buildDemoEvents() {
     listingId: DEMO_INSIGHT_LISTINGS[0].id,
     label: DEMO_INSIGHT_LISTINGS[0].label,
     date: toDateStr(addDays(now, -2)),
+    stopId: pickStopFor(2),
   })
   events.push({
     id: 'demo-event-message-2',
@@ -160,6 +196,7 @@ function buildDemoEvents() {
     listingId: DEMO_INSIGHT_LISTINGS[1].id,
     label: DEMO_INSIGHT_LISTINGS[1].label,
     date: toDateStr(addDays(now, -1)),
+    stopId: pickStopFor(1),
   })
 
   return events
@@ -171,6 +208,14 @@ function ensureSeeded() {
   writeJSON(PLANTINGS_KEY, [])
   writeJSON(EVENTS_KEY, buildDemoEvents())
   localStorage.setItem(SEEDED_KEY, '1')
+}
+
+function ensureBusinessSeeded() {
+  if (localStorage.getItem(BUSINESS_SEEDED_KEY)) return
+  const existing = readBusinessProfile()
+  const realStops = existing.stops.filter((s) => !s.demo)
+  writeBusinessProfile({ ...existing, stops: [...realStops, ...buildDemoScheduleStops()] })
+  localStorage.setItem(BUSINESS_SEEDED_KEY, '1')
 }
 
 // Seeded separately so people who already have the app get the demo
@@ -187,6 +232,7 @@ function ensureCommunitySeeded() {
 
 ensureSeeded()
 ensureCommunitySeeded()
+ensureBusinessSeeded()
 
 // ---- Listings ----
 
@@ -654,6 +700,10 @@ export function resetDemoData() {
 
   localStorage.removeItem(COMMUNITY_SEEDED_KEY)
   ensureCommunitySeeded()
+
+  const profile = readBusinessProfile()
+  const realStops = profile.stops.filter((s) => !s.demo)
+  writeBusinessProfile({ ...profile, stops: [...realStops, ...buildDemoScheduleStops()] })
 }
 
 export function clearAllData() {
@@ -670,13 +720,16 @@ export function clearAllData() {
   localStorage.removeItem(SHARED_REPORTS_KEY)
   localStorage.removeItem(COMMUNITY_POSTS_KEY)
   localStorage.removeItem(COMMUNITY_SEEDED_KEY)
+  localStorage.removeItem(BUSINESS_PROFILE_KEY)
+  localStorage.removeItem(BUSINESS_SEEDED_KEY)
   ensureSeeded()
   ensureCommunitySeeded()
+  ensureBusinessSeeded()
 }
 
 // ---- Analytics events ----
 
-function recordEvent(type, listingId, label) {
+function recordEvent(type, listingId, label, stopId = null) {
   if (!listingId) return
   const events = readArray(EVENTS_KEY, [])
   events.push({
@@ -685,20 +738,21 @@ function recordEvent(type, listingId, label) {
     listingId,
     label,
     date: toDateStr(getNow()),
+    stopId,
   })
   writeJSON(EVENTS_KEY, events)
 }
 
-export function recordListingView(listingId, label) {
-  recordEvent('view', listingId, label)
+export function recordListingView(listingId, label, stopId = null) {
+  recordEvent('view', listingId, label, stopId)
 }
 
-export function recordMessageTap(listingId, label) {
-  recordEvent('message', listingId, label)
+export function recordMessageTap(listingId, label, stopId = null) {
+  recordEvent('message', listingId, label, stopId)
 }
 
-export function recordSearchMatch(listingId, label) {
-  recordEvent('search', listingId, label)
+export function recordSearchMatch(listingId, label, stopId = null) {
+  recordEvent('search', listingId, label, stopId)
 }
 
 export function getListingViewCount(listingId) {
@@ -734,12 +788,85 @@ export function getInsights(now = getNow()) {
   })
   const topListings = [...byListing.values()].sort((a, b) => b.views - a.views).slice(0, 3)
 
+  // Views + message-taps broken down by which schedule stop the buyer
+  // came from. Untagged events fall into the 'unassigned' bucket so vendors
+  // still see the total, even before every listing view is tagged.
+  const stops = getScheduleStops()
+  const stopIndex = new Map(stops.map((s) => [s.id, s]))
+  const byStop = new Map()
+  function bumpStop(stopId, kind) {
+    const key = stopId || 'unassigned'
+    if (!byStop.has(key)) {
+      const stop = stopId ? stopIndex.get(stopId) : null
+      byStop.set(key, {
+        stopId: key,
+        label: stop ? `${stop.address}${stop.theme ? ` · ${stop.theme}` : ''}` : null,
+        date: stop?.date ?? null,
+        theme: stop?.theme ?? null,
+        views: 0,
+        messages: 0,
+      })
+    }
+    byStop.get(key)[kind === 'view' ? 'views' : 'messages'] += 1
+  }
+  weekViews.forEach((event) => bumpStop(event.stopId, 'view'))
+  weekMessages.forEach((event) => bumpStop(event.stopId, 'message'))
+  const stopBreakdown = [...byStop.values()].sort((a, b) => {
+    // Named stops first, then untagged; within each group, most-viewed first.
+    if ((a.stopId === 'unassigned') !== (b.stopId === 'unassigned')) {
+      return a.stopId === 'unassigned' ? 1 : -1
+    }
+    return b.views + b.messages - (a.views + a.messages)
+  })
+
   return {
     totalViews: weekViews.length,
     messageTaps: weekMessages.length,
     topListings,
     dailyViews,
+    stopBreakdown,
   }
+}
+
+// ---- Business profile (mobile market schedule + themes) ----
+
+function readBusinessProfile() {
+  const stored = readJSON(BUSINESS_PROFILE_KEY, null)
+  if (!isPlainObject(stored)) return { stops: [] }
+  return { stops: Array.isArray(stored.stops) ? stored.stops : [] }
+}
+
+function writeBusinessProfile(profile) {
+  writeJSON(BUSINESS_PROFILE_KEY, profile)
+}
+
+export function getBusinessProfile() {
+  return readBusinessProfile()
+}
+
+export function getScheduleStops() {
+  return readBusinessProfile().stops
+}
+
+export function saveScheduleStop(stop) {
+  const profile = readBusinessProfile()
+  const id = stop.id || `stop-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
+  const next = { ...stop, id }
+  const existing = profile.stops.findIndex((s) => s.id === id)
+  const stops =
+    existing >= 0
+      ? profile.stops.map((s, i) => (i === existing ? next : s))
+      : [...profile.stops, next]
+  writeBusinessProfile({ ...profile, stops })
+  return next
+}
+
+export function removeScheduleStop(stopId) {
+  const profile = readBusinessProfile()
+  writeBusinessProfile({
+    ...profile,
+    stops: profile.stops.filter((s) => s.id !== stopId),
+  })
 }
 
 // ---- Messaging ----

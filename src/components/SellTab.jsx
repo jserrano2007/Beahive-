@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import SellForm from './SellForm'
 import MessagesPanel from './MessagesPanel'
+import MyBusinessPanel from './MyBusinessPanel'
 import { useI18n } from '../i18n/useI18n'
 import './SellTab.css'
 
@@ -29,6 +30,9 @@ function SellTab({
   onSimulateReply,
   onMarkRead,
   onRateSeller,
+  businessStops = [],
+  onSaveBusinessStop,
+  onRemoveBusinessStop,
 }) {
   const { t } = useI18n()
   const isNeighbor = account.type !== 'business'
@@ -64,16 +68,36 @@ function SellTab({
       )}
 
       {!isNeighbor && (
-        <button
-          type="button"
-          className="view-on-map-top-btn"
-          onClick={() => onViewOnMap(null)}
-        >
-          {t('myMap.viewOnMap')}
-        </button>
+        <>
+          <div className="sell-subtabs">
+            <button
+              type="button"
+              className={`sell-subtab-btn${subTab === 'listings' ? ' active' : ''}`}
+              onClick={() => setSubTab('listings')}
+            >
+              {t('sell.subtabs.listings')}
+            </button>
+            <button
+              type="button"
+              className={`sell-subtab-btn${subTab === 'business' ? ' active' : ''}`}
+              onClick={() => setSubTab('business')}
+            >
+              {t('sell.subtabs.myBusiness')}
+            </button>
+          </div>
+          {subTab === 'listings' && (
+            <button
+              type="button"
+              className="view-on-map-top-btn"
+              onClick={() => onViewOnMap(null)}
+            >
+              {t('myMap.viewOnMap')}
+            </button>
+          )}
+        </>
       )}
 
-      {(isNeighbor ? subTab === 'listings' : true) && (
+      {(isNeighbor ? subTab === 'listings' : subTab === 'listings') && (
         <SellForm
           listings={listings}
           now={now}
@@ -102,6 +126,15 @@ function SellTab({
           onSimulateReply={onSimulateReply}
           onMarkRead={onMarkRead}
           onRateSeller={onRateSeller}
+        />
+      )}
+
+      {!isNeighbor && subTab === 'business' && (
+        <MyBusinessPanel
+          account={account}
+          stops={businessStops}
+          onSaveStop={onSaveBusinessStop}
+          onRemoveStop={onRemoveBusinessStop}
         />
       )}
     </div>

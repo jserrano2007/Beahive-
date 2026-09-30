@@ -41,6 +41,9 @@ import {
   getDevices,
   pairDevice,
   unpairDevice,
+  getScheduleStops,
+  saveScheduleStop,
+  removeScheduleStop,
   getCommunityPosts,
   createCommunityPost,
   addCommunityAnswer,
@@ -134,6 +137,9 @@ function AppMain({
   communityDraftPlantingId,
   onConsumeCommunityDraft,
   onAskCommunity,
+  businessStops,
+  onSaveBusinessStop,
+  onRemoveBusinessStop,
   onCreatePost,
   onAnswer,
   onVote,
@@ -187,6 +193,9 @@ function AppMain({
           prefill={sellPrefill}
           account={account}
           sources={places}
+          businessStops={businessStops}
+          onSaveBusinessStop={onSaveBusinessStop}
+          onRemoveBusinessStop={onRemoveBusinessStop}
           onSaveListing={onSaveListing}
           onUpdateListing={onUpdateListing}
           onRemoveListing={onRemoveListing}
@@ -291,6 +300,7 @@ function App() {
   const [sellSubTabRequest, setSellSubTabRequest] = useState(null)
   const [focusMapListingId, setFocusMapListingId] = useState(null)
   const [communityPosts, setCommunityPosts] = useState(() => getCommunityPosts())
+  const [businessStops, setBusinessStops] = useState(() => getScheduleStops())
   const [communityDraftPlantingId, setCommunityDraftPlantingId] = useState(null)
   const now = useMemo(() => getNow(), [])
   const lang = account.language || 'en'
@@ -412,6 +422,7 @@ function App() {
     setListings(getListings())
     setCommunityPosts(getCommunityPosts())
     setSharedReports(getSharedReports())
+    setBusinessStops(getScheduleStops())
   }
 
   function handleClearAllData() {
@@ -423,9 +434,20 @@ function App() {
     setAccount(getAccount())
     setConversations(getConversations())
     setCommunityPosts(getCommunityPosts())
+    setBusinessStops(getScheduleStops())
     setSellPrefillToken((token) => token + 1)
     setSettingsOpen(false)
     setActiveTab(getFirstTab(getAccount()))
+  }
+
+  function handleSaveBusinessStop(stop) {
+    saveScheduleStop(stop)
+    setBusinessStops(getScheduleStops())
+  }
+
+  function handleRemoveBusinessStop(stopId) {
+    removeScheduleStop(stopId)
+    setBusinessStops(getScheduleStops())
   }
 
   const handleConsumeGrowPrefill = useCallback(() => setGrowPrefillCropId(null), [])
@@ -603,6 +625,9 @@ function App() {
           communityDraftPlantingId={communityDraftPlantingId}
           onConsumeCommunityDraft={handleConsumeCommunityDraft}
           onAskCommunity={handleAskCommunity}
+          businessStops={businessStops}
+          onSaveBusinessStop={handleSaveBusinessStop}
+          onRemoveBusinessStop={handleRemoveBusinessStop}
           onCreatePost={handleCreatePost}
           onAnswer={handleAnswer}
           onVote={handleVote}

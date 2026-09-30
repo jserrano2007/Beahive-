@@ -1,9 +1,10 @@
 import { useI18n } from '../i18n/useI18n'
 import { getInsights } from '../data/store'
+import { formatShortDate } from '../utils/dates'
 import './InsightsTab.css'
 
 function InsightsTab({ account = {}, now }) {
-  const { t, tCount, dict } = useI18n()
+  const { t, tCount, dict, lang } = useI18n()
 
   if (!(account.type === 'business' && account.verified)) {
     return (
@@ -69,6 +70,38 @@ function InsightsTab({ account = {}, now }) {
           ))}
         </div>
       </div>
+
+      {insights.stopBreakdown && insights.stopBreakdown.length > 0 && (
+        <div className="insights-top">
+          <h3>{t('insights.byStopHeading')}</h3>
+          <p className="insights-note">{t('insights.byStopNote')}</p>
+          <ul className="insights-stop-list">
+            {insights.stopBreakdown.map((row) => (
+              <li key={row.stopId} className="insights-stop-row">
+                <div className="insights-stop-label">
+                  {row.stopId === 'unassigned'
+                    ? t('insights.byStopUnassigned')
+                    : (
+                        <>
+                          <span className="insights-stop-title">{row.label}</span>
+                          {row.date && (
+                            <span className="insights-stop-date">
+                              {formatShortDate(row.date, lang)}
+                            </span>
+                          )}
+                        </>
+                      )}
+                </div>
+                <div className="insights-stop-metrics">
+                  <span>{tCount('insights.view', row.views)}</span>
+                  <span aria-hidden="true">·</span>
+                  <span>{t('insights.messagesCount', { count: row.messages })}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   )
 }
