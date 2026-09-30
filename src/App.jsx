@@ -624,7 +624,14 @@ function App() {
           onClearAllData={handleClearAllData}
         />
 
-        <ChatFab />
+        <ChatFab
+          places={places}
+          listings={listings}
+          plantings={plantings}
+          devices={devices}
+          account={account}
+          now={now}
+        />
       </div>
     </I18nProvider>
   )

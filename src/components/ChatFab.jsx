@@ -1,13 +1,21 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useI18n } from '../i18n/useI18n'
 import { BUZZ_SYSTEM_PROMPT } from '../ai/buzzSystemPrompt'
+import { buildBuzzContext } from '../ai/buzzContext'
 import './ChatFab.css'
 
 function toAnthropicMessages(messages) {
   return messages.map((m) => ({ role: m.role, content: m.text }))
 }
 
-function ChatFab() {
+function ChatFab({
+  places = [],
+  listings = [],
+  plantings = [],
+  devices = [],
+  account = {},
+  now = new Date(),
+}) {
   const { t, lang } = useI18n()
   const [open, setOpen] = useState(false)
   const [messages, setMessages] = useState([])
@@ -66,12 +74,23 @@ function ChatFab() {
     setSending(true)
     setError(null)
     try {
+      const context = buildBuzzContext({
+        places,
+        listings,
+        plantings,
+        devices,
+        account,
+        now: now instanceof Date ? now : new Date(),
+        lang,
+      })
+      const systemWithContext = `${systemPrompt}\n\nAPP CONTEXT (JSON — read this before answering; do not repeat it back to the user):\n${JSON.stringify(context)}`
+
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: toAnthropicMessages(nextMessages),
-          system: systemPrompt,
+          system: systemWithContext,
         }),
       })
       const raw = await response.text()
