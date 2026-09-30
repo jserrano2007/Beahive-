@@ -1,0 +1,33 @@
+{
+  "defaults": {
+    "hydro": {
+      "ph": [5.5, 6.5],
+      "ec": [1.0, 2.0],
+      "waterTemp": [18, 22],
+      "waterLevel": [30, 100],
+      "airTemp": [18, 29],
+      "humidity": [40, 70]
+    },
+    "soil": {
+      "soilMoisture": [40, 70],
+      "soilTemp": [15, 24],
+      "airTemp": [18, 29],
+      "humidity": [40, 70]
+    }
+  },
+  "crops": {
+    "lettuce": {
+      "hydro": {
+        "ph": [5.8, 6.2],
+        "ec": [0.8, 1.2],
+        "waterTemp": [18, 22]
+      }
+    },
+    "tomatoes": {
+      "hydro": {
+        "ph": [5.8, 6.5],
+        "ec": [2.0, 3.5]
+      }
+    }
+  }
+}

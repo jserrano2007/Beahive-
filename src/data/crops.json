@@ -1,0 +1,10 @@
+{
+  "crops": [
+    { "id": "tomatoes", "name": "Tomatoes", "days": 75 },
+    { "id": "lettuce", "name": "Lettuce", "days": 50 },
+    { "id": "peppers", "name": "Peppers", "days": 75 },
+    { "id": "basil", "name": "Basil", "days": 60 },
+    { "id": "bush-beans", "name": "Bush beans", "days": 55 },
+    { "id": "strawberries", "name": "Strawberries", "days": 90 }
+  ]
+}

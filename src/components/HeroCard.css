@@ -1,0 +1,47 @@
+.hero-card {
+  position: relative;
+  margin: var(--space-3) var(--space-4) 0;
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  border-top-right-radius: 38px;
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgba(240, 192, 77, 0.22), transparent 60%),
+    linear-gradient(180deg, var(--primary) 0%, var(--primary-strong) 100%);
+  color: var(--on-primary);
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+}
+
+.hero-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--honeycomb);
+  background-position: 20px -8px;
+  opacity: 0.18;
+  filter: brightness(1.5);
+  pointer-events: none;
+}
+
+.hero-card > * {
+  position: relative;
+}
+
+.hero-stat {
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.hero-caption {
+  margin: var(--space-1) 0 var(--space-4);
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.92;
+}
+
+.hero-card .location-controls {
+  padding: 0;
+}

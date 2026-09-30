@@ -1,0 +1,15 @@
+{
+  "name": "Beahive · Hartford food",
+  "short_name": "Beahive",
+  "description": "Community-supported agriculture for Hartford. Find fresh food, grow at home, and share what you harvest.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f1e4",
+  "theme_color": "#26593a",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/icon-maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

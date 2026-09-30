@@ -1,0 +1,36 @@
+.place-map {
+  height: 30vh;
+  min-height: 220px;
+  max-height: 320px;
+  width: 100%;
+  border-radius: var(--organic-radius);
+  overflow: hidden;
+  background: var(--map-bg);
+}
+
+.place-map .leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: var(--map-bg);
+}
+
+.neighborhood-cluster-icon-wrapper {
+  background: transparent;
+  border: none;
+}
+
+.neighborhood-cluster-marker {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--tomato);
+  color: var(--card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: var(--font-body);
+  border: 2px solid var(--card);
+  box-shadow: 0 1px 4px rgba(91, 70, 54, 0.35);
+}

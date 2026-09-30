@@ -1,0 +1,525 @@
+.grow-guide {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---- Header ---- */
+
+.gg-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gg-eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--leaf);
+}
+
+.gg-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.gg-sub {
+  margin: 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* ---- Progress dots ---- */
+
+.gg-progress {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gg-progress-step {
+  flex: 1;
+  min-height: 8px;
+  border-radius: 999px;
+  background: var(--sprout);
+  color: transparent;
+  text-align: center;
+  font-size: 0;
+}
+
+.gg-progress-step.current {
+  background: var(--leaf);
+}
+
+.gg-progress-step.done {
+  background: var(--moss);
+}
+
+.gg-progress-step.pending {
+  background: var(--line-soft);
+}
+
+/* ---- Question card ---- */
+
+.gg-question {
+  background: var(--card);
+  border-radius: 26px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 2px 0 rgba(91, 70, 54, 0.08);
+}
+
+.gg-q-heading {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--ink);
+}
+
+.gg-back-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.gg-back-btn {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--leaf);
+  background: none;
+  border: none;
+  padding: 6px 10px;
+  min-height: 36px;
+  cursor: pointer;
+}
+
+.gg-picked-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--sprout);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ---- Option buttons ---- */
+
+.gg-option-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gg-option-btn {
+  width: 100%;
+  min-height: 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--line);
+  border-radius: 18px;
+  background: var(--card);
+  color: var(--ink);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.gg-option-btn:hover,
+.gg-option-btn:focus-visible {
+  border-color: var(--leaf);
+  background: var(--sprout);
+}
+
+.gg-option-label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.gg-option-hint {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ---- Results ---- */
+
+.gg-results {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gg-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.gg-summary-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.gg-restart-btn {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--leaf);
+  background: none;
+  border: none;
+  padding: 6px 10px;
+  min-height: 36px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.gg-note {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: var(--status-warning-bg);
+  color: var(--status-warning-text);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ---- Method cards ---- */
+
+.gg-method-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gg-method-card {
+  background: var(--card);
+  border: 1.5px solid var(--line);
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+.gg-method-card.best {
+  border-color: var(--leaf);
+  box-shadow: 0 2px 0 rgba(47, 93, 58, 0.12);
+}
+
+.gg-method-card.featured {
+  border-color: var(--sunflower);
+}
+
+.gg-method-summary {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  font: inherit;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.gg-method-summary-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  flex: 1;
+}
+
+.gg-method-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.gg-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.gg-badge-best {
+  background: var(--leaf);
+  color: var(--card);
+}
+
+.gg-badge-featured {
+  background: var(--sunflower);
+  color: var(--ink);
+}
+
+.gg-method-name {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.gg-method-tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--leaf);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.gg-method-blurb {
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--muted-2);
+}
+
+.gg-method-science {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-top: 4px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: var(--status-warning-bg);
+  color: var(--status-warning-text);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.gg-science-badge {
+  flex-shrink: 0;
+}
+
+/* ---- Levo pathway card ---- */
+
+.gg-levo-card {
+  margin-top: 4px;
+  background: var(--card);
+  border: 1.5px dashed var(--sunflower);
+  border-radius: 26px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gg-levo-eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sunflower);
+}
+
+.gg-levo-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 19px;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.gg-levo-body {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--muted-2);
+}
+
+.gg-levo-cta {
+  align-self: flex-start;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--leaf);
+  color: var(--card);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  margin-top: 4px;
+}
+
+.gg-method-chevron {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--sprout);
+  color: var(--leaf);
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.gg-method-meta {
+  list-style: none;
+  margin: 0;
+  padding: 0 16px 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.gg-method-meta li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.gg-meta-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.gg-meta-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.gg-method-details {
+  padding: 4px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.gg-details-heading {
+  margin: 8px 0 2px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--leaf);
+}
+
+.gg-need-list {
+  list-style: disc;
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.gg-step-list {
+  margin: 0;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.gg-step-list li {
+  padding-left: 4px;
+}
+
+.gg-crop-chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gg-crop-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 6px 6px 12px;
+  border-radius: 999px;
+  background: var(--sprout);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.gg-crop-chip-plain {
+  padding: 6px 12px;
+  background: var(--line-soft);
+  color: var(--muted-2);
+}
+
+.gg-crop-track-btn {
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  min-height: 32px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 999px;
+  background: var(--leaf);
+  color: var(--card);
+  cursor: pointer;
+}
+
+/* ---- Very narrow phones ---- */
+
+@media (max-width: 360px) {
+  .gg-method-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .gg-method-name {
+    font-size: 18px;
+  }
+
+  .gg-title {
+    font-size: 20px;
+  }
+}

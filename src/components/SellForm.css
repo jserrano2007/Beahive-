@@ -1,0 +1,271 @@
+.sell-tab {
+  padding: 16px;
+}
+
+.sell-account-summary {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--leaf);
+  cursor: pointer;
+}
+
+.sell-form {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sell-form h2 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--ink);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.field select,
+.field input[type='text'],
+.field input[type='date'],
+.field input[type='number'],
+.field input[type='file'] {
+  font: inherit;
+  font-size: 16px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+}
+
+.field-readonly {
+  font-size: 16px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--muted);
+}
+
+.field-checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.field-checkbox input {
+  width: 20px;
+  height: 20px;
+}
+
+.sell-photo-error {
+  margin: -6px 0 0;
+  font-size: 14px;
+  color: var(--tomato);
+}
+
+.sell-photo-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sell-photo-preview img {
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.sell-photo-preview button {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--tomato);
+  cursor: pointer;
+}
+
+.sell-submit {
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 48px;
+  padding: 14px;
+  border: none;
+  border-radius: 999px;
+  background: var(--leaf);
+  color: var(--card);
+  cursor: pointer;
+}
+
+.sell-success {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.sell-empty {
+  position: relative;
+  overflow: hidden;
+  background: var(--card);
+  border-radius: var(--organic-radius);
+  padding: 20px 16px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.sell-empty::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 110px;
+  height: 110px;
+  background: var(--sprout);
+  border-radius: var(--blob-radius);
+  z-index: 0;
+}
+
+.sell-empty p,
+.sell-empty .sell-empty-btn {
+  position: relative;
+  z-index: 1;
+}
+
+.sell-success p,
+.sell-empty p {
+  margin: 0 0 8px;
+}
+
+.sell-success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.sell-success-btn,
+.sell-empty-btn {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 999px;
+  background: var(--leaf);
+  color: var(--card);
+  cursor: pointer;
+}
+
+.sell-empty-btn {
+  margin-top: 8px;
+}
+
+.sell-success-btn.secondary {
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.sell-listings {
+  margin-top: 24px;
+}
+
+.sell-listings h2 {
+  font-size: 18px;
+  color: var(--ink);
+}
+
+.sell-listings-empty {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.sell-listings-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sell-listing-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 14px 16px;
+}
+
+.sell-listing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.sell-listing-buttons {
+  flex-shrink: 0;
+  display: flex;
+  gap: 8px;
+}
+
+.sell-view-map-btn {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.sell-edit-btn {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--leaf);
+  cursor: pointer;
+}
+
+.sell-remove-btn {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--tomato);
+  cursor: pointer;
+}

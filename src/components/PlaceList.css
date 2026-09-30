@@ -1,0 +1,87 @@
+.place-list {
+  list-style: none;
+  margin: 0;
+  padding: 12px 16px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.place-card {
+  background: var(--card);
+  border-radius: 26px;
+  padding: 16px;
+  box-shadow: 0 2px 0 rgba(91, 70, 54, 0.08);
+  cursor: pointer;
+}
+
+.place-card:focus-visible {
+  outline: 3px solid var(--leaf);
+  outline-offset: 2px;
+}
+
+.place-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.place-name {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.place-distance {
+  flex-shrink: 0;
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.place-category {
+  margin-top: 4px;
+  font-size: 15px;
+  color: var(--leaf);
+}
+
+.place-address {
+  margin-top: 6px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.place-status {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--status-closed-bg);
+  color: var(--status-closed-text);
+}
+
+.place-status.open {
+  background: var(--status-open-bg);
+  color: var(--status-open-text);
+}
+
+.place-season {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.place-card.out-of-season {
+  opacity: 0.6;
+}
+
+.place-card.out-of-season .place-season {
+  color: var(--status-warning-text);
+  font-weight: 600;
+}

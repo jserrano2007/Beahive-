@@ -1,0 +1,78 @@
+.tab-bar {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 760px;
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  background: var(--surface-card);
+  box-shadow: var(--shadow-tabbar);
+  z-index: 1500;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  border-top: 1px solid var(--border-soft);
+}
+
+.tab-bar-btn {
+  position: relative;
+  flex: 1;
+  min-height: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 4px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.tab-bar-icon-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 30px;
+  border-radius: 999px;
+}
+
+.tab-bar-icon-pill svg {
+  width: 22px;
+  height: 22px;
+}
+
+.tab-bar-btn.active {
+  color: var(--primary-strong);
+  font-weight: 700;
+}
+
+.tab-bar-btn.active .tab-bar-icon-pill {
+  background: var(--primary-soft);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.tab-bar-badge {
+  position: absolute;
+  top: 2px;
+  right: 50%;
+  transform: translateX(24px);
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--tomato);
+  color: var(--card);
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

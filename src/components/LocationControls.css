@@ -1,0 +1,71 @@
+.location-controls {
+  padding: 12px 16px 0;
+}
+
+.location-controls-row {
+  display: flex;
+  gap: 10px;
+}
+
+.location-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  min-height: 46px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: none;
+  background: var(--sunflower);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.location-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.location-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-top-color: var(--ink);
+  animation: location-spinner-spin 0.8s linear infinite;
+}
+
+@keyframes location-spinner-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .location-spinner {
+    animation: none;
+  }
+}
+
+.neighborhood-select {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  font-size: 15px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+}
+
+.location-message {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--card);
+  opacity: 0.85;
+}

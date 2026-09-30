@@ -1,0 +1,1170 @@
+{
+  "generated": "2026-09-22",
+  "sources": [
+    {
+      "id": "fm-regional",
+      "name": "Hartford Regional Market (CT Regional Market)",
+      "category": "farmers_market",
+      "address": "101 Reserve Rd",
+      "city": "Hartford",
+      "zip": "06114",
+      "inHartford": true,
+      "lat": 41.7318,
+      "lng": -72.657,
+      "hours": {
+        "sat": [
+          [
+            "06:00",
+            "09:00"
+          ]
+        ],
+        "sun": [
+          [
+            "06:00",
+            "09:00"
+          ]
+        ]
+      },
+      "season": {
+        "start": "2026-04-04",
+        "end": "2026-10-31"
+      },
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": "860-527-5047",
+      "website": null,
+      "status": "confirmed_2026",
+      "notes": "Large early-morning weekend market, produce/plants/eggs/honey. One listing says 5-9am and a May 16 start; confirm.",
+      "sourceUrl": "https://ctvisit.com/articles/farmers-markets-connecticut",
+      "approxCoords": true
+    },
+    {
+      "id": "fm-oldstatehouse",
+      "name": "Old State House Farmers Market",
+      "category": "farmers_market",
+      "address": "800 Main St",
+      "city": "Hartford",
+      "zip": "06103",
+      "inHartford": true,
+      "lat": 41.7663,
+      "lng": -72.6734,
+      "hours": {
+        "tue": [
+          [
+            "10:00",
+            "14:00"
+          ]
+        ],
+        "fri": [
+          [
+            "10:00",
+            "14:00"
+          ]
+        ]
+      },
+      "season": {
+        "start": "2026-06-05",
+        "end": "2026-10-30"
+      },
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": true,
+      "seniorFmnp": true,
+      "phone": null,
+      "website": "https://wp.cga.ct.gov/osh/events-page/farmers-market/",
+      "status": "confirmed_2026",
+      "notes": "Downtown. WIC/Senior FMNP accepted and doubled in 2026. SNAP not stated.",
+      "sourceUrl": "https://wp.cga.ct.gov/osh/events-page/farmers-market/",
+      "approxCoords": true
+    },
+    {
+      "id": "fm-billingsforge",
+      "name": "Farmers Market at Billings Forge",
+      "category": "farmers_market",
+      "address": "539 Broad St",
+      "city": "Hartford",
+      "zip": "06106",
+      "inHartford": true,
+      "lat": 41.761,
+      "lng": -72.6862,
+      "hours": {
+        "thu": [
+          [
+            "11:00",
+            "15:00"
+          ]
+        ]
+      },
+      "season": {
+        "start": "2026-04-23",
+        "end": "2026-10-29"
+      },
+      "snap": true,
+      "snapMatch": null,
+      "wicFmnp": true,
+      "seniorFmnp": true,
+      "phone": "860-548-9877",
+      "website": "http://www.hartfordfarmersmarket.org/",
+      "status": "confirmed_2026",
+      "notes": "Frog Hollow. Some listings say 11-2. Has historically run an indoor winter market (Thu 3:30-6, Nov-Apr, 563 Broad St) - confirm for 2026-27.",
+      "sourceUrl": "https://buyctgrown.com/hartfordfarmersmarketatbillingsforge",
+      "approxCoords": true
+    },
+    {
+      "id": "fm-knox",
+      "name": "KNOX Farmers Market",
+      "category": "farmers_market",
+      "address": "75 Laurel St",
+      "city": "Hartford",
+      "zip": "06106",
+      "inHartford": true,
+      "lat": 41.7635,
+      "lng": -72.6905,
+      "hours": {
+        "mon": [
+          [
+            "15:30",
+            "18:30"
+          ]
+        ]
+      },
+      "season": {
+        "start": "2026-06-01",
+        "end": "2026-10-26"
+      },
+      "snap": true,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": true,
+      "phone": "860-951-7694",
+      "website": "https://knoxhartford.org/",
+      "status": "confirmed_2026",
+      "notes": "Sells produce from KNOX urban farmers. SNAP/SFMNP from older listing.",
+      "sourceUrl": "https://knoxhartford.org/",
+      "approxCoords": true
+    },
+    {
+      "id": "fm-westend",
+      "name": "West End Farmers Market",
+      "category": "farmers_market",
+      "address": "385 Farmington Ave (Clemens Place Green)",
+      "city": "Hartford",
+      "zip": "06105",
+      "inHartford": true,
+      "lat": 41.7663809,
+      "lng": -72.7024192,
+      "hours": {
+        "tue": [
+          [
+            "16:00",
+            "19:00"
+          ]
+        ]
+      },
+      "season": {
+        "start": "2026-06-02",
+        "end": "2026-10-27"
+      },
+      "snap": true,
+      "snapMatch": "Doubles SNAP up to $20 per market",
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": null,
+      "website": "http://www.wefm.org/",
+      "status": "confirmed_2026",
+      "notes": "October hours shift to 3-6pm.",
+      "sourceUrl": "http://www.wefm.org/"
+    },
+    {
+      "id": "fm-northend",
+      "name": "North End Farmers Market",
+      "category": "farmers_market",
+      "address": "80 Coventry St (North End Senior Center)",
+      "city": "Hartford",
+      "zip": "06112",
+      "inHartford": true,
+      "lat": 41.7921,
+      "lng": -72.6872,
+      "hours": {
+        "wed": [
+          [
+            "09:00",
+            "12:00"
+          ]
+        ]
+      },
+      "season": {
+        "start": "2026-06-24",
+        "end": "2026-10-28"
+      },
+      "snap": true,
+      "snapMatch": "SNAP incentives offered",
+      "wicFmnp": true,
+      "seniorFmnp": true,
+      "phone": "860-296-9325",
+      "website": "https://hartfordfood.org/programs/north-end-farmers-market/",
+      "status": "needs_verification",
+      "notes": "Hartford Food System lists 9am-12pm; other listings 10am-1pm. Season dates approximate - confirm.",
+      "sourceUrl": "https://hartfordfood.org/programs/north-end-farmers-market/",
+      "approxCoords": true
+    },
+    {
+      "id": "fm-promisezone",
+      "name": "Promise Zone Community Farmers Market",
+      "category": "farmers_market",
+      "address": "1205 Albany Ave",
+      "city": "Hartford",
+      "zip": "06112",
+      "inHartford": true,
+      "lat": 41.7874,
+      "lng": -72.7,
+      "hours": {
+        "sat": [
+          [
+            "08:00",
+            "11:00"
+          ]
+        ]
+      },
+      "season": null,
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": "860-930-0530",
+      "website": "http://www.numc-hartford.org",
+      "status": "possibly_inactive",
+      "notes": "Listed ~2020 as 2nd & 4th Saturdays 9-11am next to North United Methodist Church. No current info found.",
+      "sourceUrl": "https://www.metrohartford.com/newsroom/about-us/newsroom/farmers-markets-throughout-hartford",
+      "approxCoords": true
+    },
+    {
+      "id": "fm-parkst",
+      "name": "Park Street Farmers Market",
+      "category": "farmers_market",
+      "address": "Park St & Washington St",
+      "city": "Hartford",
+      "zip": "06106",
+      "inHartford": true,
+      "lat": null,
+      "lng": null,
+      "hours": null,
+      "season": {
+        "start": "2026-06-01",
+        "end": "2026-10-26"
+      },
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": "860-653-6856",
+      "website": "https://harvestlymarkets.com/markets/ct/hartford-park-street-farmers-market-309187/",
+      "status": null,
+      "notes": "Listed ~2020 as Mondays 9:30am-1pm. No current info found.",
+      "sourceUrl": "https://www.metrohartford.com/newsroom/about-us/newsroom/farmers-markets-throughout-hartford"
+    },
+    {
+      "id": "gr-stopshop",
+      "name": "Stop & Shop",
+      "category": "grocery",
+      "address": "150 New Park Ave",
+      "city": "Hartford",
+      "zip": "06106",
+      "inHartford": true,
+      "lat": 41.7527,
+      "lng": -72.7116,
+      "hours": {
+        "mon": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "sun": [
+          [
+            "07:00",
+            "21:00"
+          ]
+        ]
+      },
+      "season": null,
+      "snap": true,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": "860-232-8777",
+      "website": null,
+      "status": "confirmed_2026",
+      "notes": "Described in 2023 as the only full-service supermarket in city limits (western edge). SNAP assumed - chain accepts EBT.",
+      "sourceUrl": "https://stores.stopandshop.com/0634",
+      "approxCoords": true
+    },
+    {
+      "id": "gr-savealot",
+      "name": "Save A Lot",
+      "category": "grocery",
+      "address": "1888 Main St",
+      "city": "Hartford",
+      "zip": "06120",
+      "inHartford": true,
+      "lat": 41.7818,
+      "lng": -72.6737,
+      "hours": {
+        "mon": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "sun": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ]
+      },
+      "season": null,
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": "860-548-0654",
+      "website": null,
+      "status": "confirmed_2026",
+      "notes": "Clay Arsenal / North End.",
+      "sourceUrl": "https://www.yelp.com/biz/save-a-lot-hartford-2",
+      "approxCoords": true
+    },
+    {
+      "id": "gr-ctown-park",
+      "name": "CTown Supermarket (Park St)",
+      "category": "grocery",
+      "address": "1744 Park St",
+      "city": "Hartford",
+      "zip": "06106",
+      "inHartford": true,
+      "lat": 41.756,
+      "lng": -72.7078,
+      "hours": {
+        "mon": [
+          [
+            "07:00",
+            "20:00"
+          ]
+        ],
+        "tue": [
+          [
+            "07:00",
+            "20:00"
+          ]
+        ],
+        "wed": [
+          [
+            "07:00",
+            "20:00"
+          ]
+        ],
+        "thu": [
+          [
+            "07:00",
+            "20:00"
+          ]
+        ],
+        "fri": [
+          [
+            "07:00",
+            "20:00"
+          ]
+        ],
+        "sat": [
+          [
+            "07:00",
+            "20:00"
+          ]
+        ],
+        "sun": [
+          [
+            "07:00",
+            "18:00"
+          ]
+        ]
+      },
+      "season": null,
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": "860-236-5520",
+      "website": null,
+      "status": "confirmed_2026",
+      "notes": "Hours not listed on store page.",
+      "sourceUrl": "https://locations.ctownsupermarkets.com/ctown-supermarkets-c4acb3666207",
+      "approxCoords": true
+    },
+    {
+      "id": "gr-ctown-nb",
+      "name": "CTown Supermarket (New Britain Ave)",
+      "category": "grocery",
+      "address": "394 New Britain Ave",
+      "city": "Hartford",
+      "zip": "06106",
+      "inHartford": true,
+      "lat": 41.7478,
+      "lng": -72.6852,
+      "hours": {
+        "mon": [
+          [
+            "07:30",
+            "20:00"
+          ]
+        ],
+        "tue": [
+          [
+            "07:30",
+            "20:00"
+          ]
+        ],
+        "wed": [
+          [
+            "07:30",
+            "20:00"
+          ]
+        ],
+        "thu": [
+          [
+            "07:30",
+            "20:00"
+          ]
+        ],
+        "fri": [
+          [
+            "07:30",
+            "20:00"
+          ]
+        ],
+        "sat": [
+          [
+            "07:30",
+            "20:00"
+          ]
+        ],
+        "sun": [
+          [
+            "07:30",
+            "18:30"
+          ]
+        ]
+      },
+      "season": null,
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": "860-525-5984",
+      "website": null,
+      "status": "needs_verification",
+      "notes": "",
+      "sourceUrl": "https://www.yellowpages.com/hartford-ct/grocery-stores",
+      "approxCoords": true
+    },
+    {
+      "id": "gr-carlos",
+      "name": "Carlos Supermarket",
+      "category": "small_grocery",
+      "address": "198 Farmington Ave",
+      "city": "Hartford",
+      "zip": "06105",
+      "inHartford": true,
+      "lat": 41.7677,
+      "lng": -72.6866,
+      "hours": {
+        "mon": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "sun": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ]
+      },
+      "season": null,
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": "860-522-4772",
+      "website": null,
+      "status": "needs_verification",
+      "notes": "Produce selection unknown.",
+      "sourceUrl": "https://www.yellowpages.com/hartford-ct/grocery-stores",
+      "approxCoords": true
+    },
+    {
+      "id": "gr-peruanito",
+      "name": "El Peruanito Grocery",
+      "category": "small_grocery",
+      "address": "598 Park St",
+      "city": "Hartford",
+      "zip": "06106",
+      "inHartford": true,
+      "lat": 41.759,
+      "lng": -72.683,
+      "hours": {
+        "mon": [
+          [
+            "08:00",
+            "20:00"
+          ]
+        ],
+        "tue": [
+          [
+            "08:00",
+            "20:00"
+          ]
+        ],
+        "wed": [
+          [
+            "08:00",
+            "20:00"
+          ]
+        ],
+        "thu": [
+          [
+            "08:00",
+            "20:00"
+          ]
+        ],
+        "fri": [
+          [
+            "08:00",
+            "20:00"
+          ]
+        ],
+        "sat": [
+          [
+            "08:00",
+            "20:00"
+          ]
+        ],
+        "sun": [
+          [
+            "08:00",
+            "20:00"
+          ]
+        ]
+      },
+      "season": null,
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": "860-461-1282",
+      "website": null,
+      "status": "needs_verification",
+      "notes": "Produce selection unknown.",
+      "sourceUrl": "https://www.superpages.com/hartford-ct/grocery-stores",
+      "approxCoords": true
+    },
+    {
+      "id": "farm-levo",
+      "name": "Levo International Urban Farm",
+      "category": "urban_farm",
+      "address": "441 Homestead Ave",
+      "city": "Hartford",
+      "zip": "06112",
+      "inHartford": true,
+      "lat": 41.7803,
+      "lng": -72.7009,
+      "hours": {
+        "tue": [
+          [
+            "15:00",
+            "19:00"
+          ]
+        ],
+        "wed": [
+          [
+            "15:00",
+            "19:00"
+          ]
+        ],
+        "thu": [
+          [
+            "15:00",
+            "19:00"
+          ]
+        ],
+        "fri": [
+          [
+            "15:00",
+            "19:00"
+          ]
+        ],
+        "sat": [
+          [
+            "09:00",
+            "13:00"
+          ]
+        ],
+        "sun": [
+          [
+            "10:00",
+            "14:00"
+          ]
+        ]
+      },
+      "season": null,
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": "844-947-2336",
+      "website": "https://levointernational.org",
+      "status": "confirmed_2026",
+      "notes": "Hydroponic farm with on-site farm stand (hours unknown). Also sites on Enfield St and Garden St. Near UHart; supplies UHart's pantry. Great partner for the DIY hydroponics section.",
+      "sourceUrl": "https://www.wfsb.com/2026/07/22/hartford-hydroponic-farm-says-its-lettuce-is-safe-connecticut-cyclosporiasis-cases-climb-56/",
+      "approxCoords": true
+    },
+    {
+      "id": "farm-keney",
+      "name": "Keney Park Sustainability Project",
+      "category": "urban_farm",
+      "address": "Keney Park (exact site address TBD)",
+      "city": "Hartford",
+      "zip": null,
+      "inHartford": true,
+      "lat": null,
+      "lng": null,
+      "hours": null,
+      "season": null,
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": null,
+      "website": "https://keneyparksustainability.org/",
+      "status": "needs_verification",
+      "notes": "North End urban farm; has run a farm stand, mobile market and home garden kit program. Confirm public hours/address.",
+      "sourceUrl": "https://keneyparksustainability.org/about/"
+    },
+    {
+      "id": "farm-trinfo",
+      "name": "Trinfo Community Garden (Trinity College)",
+      "category": "community_garden",
+      "address": "TBD",
+      "city": "Hartford",
+      "zip": null,
+      "inHartford": true,
+      "lat": null,
+      "lng": null,
+      "hours": null,
+      "season": null,
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": null,
+      "website": null,
+      "status": "needs_verification",
+      "notes": "Mentioned in Sept 2026 reporting; address/access not yet found.",
+      "sourceUrl": "https://dailycampus.com/2026/09/22/how-hartford-is-grappling-with-food-access-issues/"
+    },
+    {
+      "id": "farm-urbanroots",
+      "name": "Urban Roots Grow Center (Chrysler Center)",
+      "category": "urban_farm",
+      "address": "TBD",
+      "city": "Hartford",
+      "zip": null,
+      "inHartford": true,
+      "lat": null,
+      "lng": null,
+      "hours": null,
+      "season": null,
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": null,
+      "website": null,
+      "status": "needs_verification",
+      "notes": "Mentioned in Sept 2026 reporting; address/access not yet found.",
+      "sourceUrl": "https://dailycampus.com/2026/09/22/how-hartford-is-grappling-with-food-access-issues/"
+    },
+    {
+      "id": "fa-handsonhartford",
+      "name": "Hands On Hartford",
+      "category": "food_pantry",
+      "address": "55 Bartholomew Ave",
+      "city": "Hartford",
+      "zip": "06106",
+      "inHartford": true,
+      "lat": 41.7545,
+      "lng": -72.7043,
+      "hours": {
+        "mon": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "tue": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "wed": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "thu": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "fri": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ]
+      },
+      "season": null,
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": null,
+      "website": null,
+      "status": "needs_verification",
+      "notes": "Processes donated fresh produce for its pantry. Hours shown are produce drop-off hours; confirm pantry hours.",
+      "sourceUrl": "https://knoxhartford.org/community-gardens/",
+      "approxCoords": true
+    },
+    {
+      "id": "nb-aldi-wh",
+      "name": "Aldi (West Hartford)",
+      "category": "grocery",
+      "address": "511 New Park Ave",
+      "city": "West Hartford",
+      "zip": "06110",
+      "inHartford": false,
+      "lat": 41.7448,
+      "lng": -72.7148,
+      "hours": null,
+      "season": null,
+      "snap": true,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": null,
+      "website": null,
+      "status": "needs_verification",
+      "notes": "Just over the line from Hartford's West End/Parkville.",
+      "sourceUrl": "https://www.fsis.usda.gov/sites/default/files/distro_list/2025-01/RC-001-2025-Retail-List.pdf",
+      "approxCoords": true
+    },
+    {
+      "id": "nb-aldi-eh",
+      "name": "Aldi (East Hartford)",
+      "category": "grocery",
+      "address": "801 Silver Ln",
+      "city": "East Hartford",
+      "zip": "06118",
+      "inHartford": false,
+      "lat": 41.748,
+      "lng": -72.612,
+      "hours": null,
+      "season": null,
+      "snap": true,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": null,
+      "website": null,
+      "status": "needs_verification",
+      "notes": "",
+      "sourceUrl": "https://www.fsis.usda.gov/sites/default/files/distro_list/2025-01/RC-001-2025-Retail-List.pdf",
+      "approxCoords": true
+    },
+    {
+      "id": "nb-pricerite-wh",
+      "name": "Price Rite (West Hartford)",
+      "category": "grocery",
+      "address": "983 New Britain Ave",
+      "city": "West Hartford",
+      "zip": "06110",
+      "inHartford": false,
+      "lat": 41.7395,
+      "lng": -72.72,
+      "hours": null,
+      "season": null,
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": "860-953-5816",
+      "website": null,
+      "status": "needs_verification",
+      "notes": "",
+      "sourceUrl": "https://superpages.com/yellowpages/c-grocery+stores/s-ct/t-west+hartford",
+      "approxCoords": true
+    },
+    {
+      "id": "nb-ctown-eh",
+      "name": "CTown Supermarket (East Hartford)",
+      "category": "grocery",
+      "address": "442 Main St",
+      "city": "East Hartford",
+      "zip": "06118",
+      "inHartford": false,
+      "lat": 41.7533944,
+      "lng": -72.6402071,
+      "hours": {
+        "mon": [
+          [
+            "08:00",
+            "20:00"
+          ]
+        ],
+        "tue": [
+          [
+            "08:00",
+            "20:00"
+          ]
+        ],
+        "wed": [
+          [
+            "08:00",
+            "20:00"
+          ]
+        ],
+        "thu": [
+          [
+            "08:00",
+            "20:00"
+          ]
+        ],
+        "fri": [
+          [
+            "08:00",
+            "20:00"
+          ]
+        ],
+        "sat": [
+          [
+            "08:00",
+            "20:00"
+          ]
+        ],
+        "sun": [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ]
+      },
+      "season": null,
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": "860-568-2221",
+      "website": null,
+      "status": "confirmed_2026",
+      "notes": "",
+      "sourceUrl": "https://locations.ctownsupermarkets.com/ctown-supermarkets-70561afbb9d3"
+    },
+    {
+      "id": "nb-fm-eh",
+      "name": "East Hartford Farmers Market",
+      "category": "farmers_market",
+      "address": "1047 Main St (Town Green)",
+      "city": "East Hartford",
+      "zip": "06108",
+      "inHartford": false,
+      "lat": 41.763,
+      "lng": -72.642,
+      "hours": {
+        "tue": [
+          [
+            "12:00",
+            "14:30"
+          ]
+        ]
+      },
+      "season": {
+        "start": "2026-07-07",
+        "end": "2026-10-27"
+      },
+      "snap": true,
+      "snapMatch": "End Hunger CT! SNAP Match",
+      "wicFmnp": true,
+      "seniorFmnp": true,
+      "phone": null,
+      "website": null,
+      "status": "confirmed_2026",
+      "notes": "No market Aug 4, 2026.",
+      "sourceUrl": "https://www.easthartfordct.gov/farmers-market",
+      "approxCoords": true
+    },
+    {
+      "id": "nb-fm-wh",
+      "name": "West Hartford Farmers Market",
+      "category": "farmers_market",
+      "address": "50 S Main St (Town Hall lot)",
+      "city": "West Hartford",
+      "zip": "06107",
+      "inHartford": false,
+      "lat": 41.762,
+      "lng": -72.742,
+      "hours": {
+        "sat": [
+          [
+            "09:00",
+            "13:00"
+          ]
+        ]
+      },
+      "season": {
+        "start": "2026-05-02",
+        "end": "2026-12-10"
+      },
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": true,
+      "phone": null,
+      "website": null,
+      "status": "confirmed_2026",
+      "notes": "Runs into December - one of the latest-season options.",
+      "sourceUrl": "https://www.westhartfordct.gov/visit-us/gardens-farms",
+      "approxCoords": true
+    },
+    {
+      "id": "nb-fm-blueback",
+      "name": "Blue Back Farmers Market",
+      "category": "farmers_market",
+      "address": "50 S Main St (Town Hall lot)",
+      "city": "West Hartford",
+      "zip": "06107",
+      "inHartford": false,
+      "lat": 41.7621,
+      "lng": -72.7418,
+      "hours": {
+        "sun": [
+          [
+            "10:00",
+            "13:00"
+          ]
+        ]
+      },
+      "season": {
+        "start": "2026-06-14",
+        "end": "2026-10-25"
+      },
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": null,
+      "website": null,
+      "status": "confirmed_2026",
+      "notes": "",
+      "sourceUrl": "https://www.bluebackfarmersmarket.org/",
+      "approxCoords": true
+    },
+    {
+      "id": "nb-fm-wethersfield",
+      "name": "Wethersfield Farmers Market",
+      "category": "farmers_market",
+      "address": "220 Hartford Ave (Solomon Welles House)",
+      "city": "Wethersfield",
+      "zip": "06109",
+      "inHartford": false,
+      "lat": 41.716,
+      "lng": -72.668,
+      "hours": {
+        "thu": [
+          [
+            "15:00",
+            "18:00"
+          ]
+        ]
+      },
+      "season": {
+        "start": "2026-05-28",
+        "end": "2026-10-08"
+      },
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": null,
+      "website": null,
+      "status": "confirmed_2026",
+      "notes": "",
+      "sourceUrl": "https://www.angiesantoro.com/blog/2026-ct-farmers-market-guide/",
+      "approxCoords": true
+    },
+    {
+      "id": "nb-fm-windsor",
+      "name": "Windsor Farmers Market",
+      "category": "farmers_market",
+      "address": "240 Broad St",
+      "city": "Windsor",
+      "zip": "06095",
+      "inHartford": false,
+      "lat": 41.852,
+      "lng": -72.644,
+      "hours": {
+        "thu": [
+          [
+            "15:00",
+            "18:00"
+          ]
+        ]
+      },
+      "season": {
+        "start": "2026-06-18",
+        "end": "2026-10-15"
+      },
+      "snap": null,
+      "snapMatch": null,
+      "wicFmnp": null,
+      "seniorFmnp": null,
+      "phone": null,
+      "website": null,
+      "status": "confirmed_2026",
+      "notes": "",
+      "sourceUrl": "https://www.maryellenmaloney.com/blog/2026-ct-farmers-market-guide/",
+      "approxCoords": true
+    }
+  ],
+  "resources": [
+    {
+      "name": "Mobile Foodshare",
+      "what": "Free produce truck at 60+ sites in Hartford & Tolland counties, most every 2 weeks, no ID, 16+",
+      "phone": "860-856-4321",
+      "text": "Text FOODSHARE to 85511",
+      "url": "https://www.ctfoodshare.org"
+    },
+    {
+      "name": "211 CT",
+      "what": "Residents use 211's list of nearby food distributions with dates and times",
+      "phone": "211",
+      "url": "https://www.211ct.org"
+    },
+    {
+      "name": "KNOX Community Gardens",
+      "what": "21 gardens citywide; plot applications open each January; free seeds, water, compost",
+      "phone": "860-951-7694",
+      "url": "https://knoxhartford.org/community-gardens/"
+    },
+    {
+      "name": "CT Grown farmers market list",
+      "what": "Official statewide list + map of certified markets",
+      "url": "https://ctgrown.gov/farmersmarkets"
+    }
+  ]
+}

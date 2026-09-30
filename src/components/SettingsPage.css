@@ -1,0 +1,361 @@
+.settings-page {
+  position: fixed;
+  inset: 0;
+  z-index: 1600;
+  background: var(--oat);
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-page.open {
+  transform: translateX(0);
+}
+
+.settings-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--oat);
+  border-bottom: 1px solid var(--line);
+}
+
+.settings-back-btn {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 4px;
+  border: none;
+  background: none;
+  color: var(--leaf);
+  cursor: pointer;
+}
+
+.settings-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--ink);
+}
+
+.settings-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.settings-section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settings-section h3 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.settings-label {
+  color: var(--muted);
+}
+
+.settings-value {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.verified-badge {
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--sprout);
+  color: var(--status-open-text);
+}
+
+.business-link {
+  align-self: flex-start;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--leaf);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.plus-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.plus-card h4 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.plus-card p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.plus-subscribe-btn {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 999px;
+  background: var(--leaf);
+  color: var(--card);
+  cursor: pointer;
+}
+
+.plus-cancel-btn {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.insights-section {
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.insights-section h4 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.insights-section > h4:first-child {
+  margin: 0;
+  font-size: 15px;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--ink);
+}
+
+.insights-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.insights-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.insights-stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.insights-stat-label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.insights-top-list {
+  list-style: decimal;
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.insights-top-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.insights-empty {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.insights-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 80px;
+}
+
+.insights-bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  height: 100%;
+}
+
+.insights-bar {
+  width: 100%;
+  max-width: 22px;
+  border-radius: 4px 4px 0 0;
+  background: var(--leaf);
+}
+
+.insights-bar-label {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.demo-switch-btn {
+  align-self: flex-start;
+  font: inherit;
+  font-size: 12px;
+  color: var(--muted);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.settings-danger-zone {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.settings-danger-btn {
+  align-self: flex-start;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border: 1px solid var(--tomato);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--tomato);
+  cursor: pointer;
+}
+
+.settings-confirm {
+  border: 1px solid var(--tomato);
+  border-radius: 16px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settings-confirm p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.settings-confirm-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.settings-confirm-yes {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 999px;
+  background: var(--tomato);
+  color: var(--card);
+  cursor: pointer;
+}
+
+.settings-confirm-no {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+/* Language picker: same size and look as the Grow tab's segmented control. */
+
+.settings-help {
+  margin-top: -2px;
+}
+
+.settings-segmented {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--sprout);
+}
+
+.settings-segment {
+  flex: 1;
+  min-height: 40px;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 999px;
+  background: none;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--muted-2);
+  cursor: pointer;
+}
+
+.settings-segment.active {
+  background: var(--card);
+  color: var(--leaf);
+  box-shadow: 0 1px 2px rgba(91, 70, 54, 0.15);
+}
