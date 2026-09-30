@@ -1,11 +1,9 @@
 // api/chat.js — runs on Vercel's SERVER. The key never reaches the browser.
-import { GoogleGenAI } from "@google/genai";
+import Anthropic from "@anthropic-ai/sdk";
 
 export const config = { runtime: "nodejs" };
 
 async function readBody(req) {
-  // Vercel Node runtime auto-parses JSON when content-type is application/json,
-  // but be defensive: fall back to reading the raw stream if req.body is empty.
   if (req.body && typeof req.body === "object") return req.body;
   if (typeof req.body === "string") {
     try { return JSON.parse(req.body); } catch { return {}; }
@@ -21,22 +19,32 @@ export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "POST only" });
   }
-  if (!process.env.GEMINI_API_KEY) {
-    return res.status(500).json({ error: "GEMINI_API_KEY not set on server" });
+  if (!process.env.ANTHROPIC_API_KEY) {
+    return res.status(500).json({ error: "ANTHROPIC_API_KEY not set on server" });
   }
   try {
-    const { contents, systemInstruction } = await readBody(req);
-    if (!Array.isArray(contents) || contents.length === 0) {
-      return res.status(400).json({ error: "contents[] required" });
+    const { messages, system } = await readBody(req);
+    if (!Array.isArray(messages) || messages.length === 0) {
+      return res.status(400).json({ error: "messages[] required" });
     }
-    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-    const result = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
-      contents,
-      config: systemInstruction ? { systemInstruction } : undefined,
+
+    const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+    const response = await client.messages.create({
+      model: "claude-haiku-4-5",
+      max_tokens: 1024,
+      system: system || undefined,
+      messages,
     });
-    res.status(200).json({ text: result.text });
+
+    const text = response.content
+      .filter((b) => b.type === "text")
+      .map((b) => b.text)
+      .join("");
+
+    res.status(200).json({ text });
   } catch (e) {
-    res.status(500).json({ error: e.message || String(e) });
+    // Surface the specific Anthropic error type when we have one.
+    const status = typeof e?.status === "number" ? e.status : 500;
+    res.status(status).json({ error: e?.message || String(e) });
   }
 }

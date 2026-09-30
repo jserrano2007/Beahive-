@@ -3,11 +3,8 @@ import { useI18n } from '../i18n/useI18n'
 import { BUZZ_SYSTEM_PROMPT } from '../ai/buzzSystemPrompt'
 import './ChatFab.css'
 
-function toGeminiContents(messages) {
-  return messages.map((m) => ({
-    role: m.role,
-    parts: [{ text: m.text }],
-  }))
+function toAnthropicMessages(messages) {
+  return messages.map((m) => ({ role: m.role, content: m.text }))
 }
 
 function ChatFab() {
@@ -21,7 +18,7 @@ function ChatFab() {
   const listRef = useRef(null)
   const fabRef = useRef(null)
 
-  const systemInstruction = useMemo(() => {
+  const systemPrompt = useMemo(() => {
     const langHint =
       lang === 'es'
         ? '\n\nThe app is currently set to Spanish. Prefer answering in Spanish unless the person writes in English.'
@@ -73,8 +70,8 @@ function ChatFab() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          contents: toGeminiContents(nextMessages),
-          systemInstruction,
+          messages: toAnthropicMessages(nextMessages),
+          system: systemPrompt,
         }),
       })
       const raw = await response.text()
@@ -90,7 +87,7 @@ function ChatFab() {
       }
       const reply = (data.text || '').trim()
       if (!reply) throw new Error('empty')
-      setMessages((prev) => [...prev, { role: 'model', text: reply }])
+      setMessages((prev) => [...prev, { role: 'assistant', text: reply }])
     } catch (err) {
       if (err.message === 'empty') {
         setError(t('chat.errorEmpty'))
@@ -198,7 +195,7 @@ function ChatFab() {
               </li>
             ))}
             {sending && (
-              <li className="chat-msg chat-msg-model chat-msg-typing" aria-label={t('chat.thinking')}>
+              <li className="chat-msg chat-msg-assistant chat-msg-typing" aria-label={t('chat.thinking')}>
                 <span className="chat-dot" />
                 <span className="chat-dot" />
                 <span className="chat-dot" />

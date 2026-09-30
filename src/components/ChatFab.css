@@ -202,7 +202,7 @@
   border-bottom-right-radius: 6px;
 }
 
-.chat-msg-model {
+.chat-msg-assistant {
   align-self: flex-start;
   background: var(--surface-card);
   color: var(--text);
