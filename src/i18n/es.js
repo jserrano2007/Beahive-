@@ -649,4 +649,22 @@ export default {
   'garden.sensor.offlineHint':
     'El sensor dejó de reportar. Revisa que tenga corriente y que la app tenga internet.',
   'garden.sensor.offlineShort': 'Sin conexión',
+
+  // Chat (Buzz)
+  'chat.openLabel': 'Pregunta a Buzz',
+  'chat.openAria': 'Abrir el chat con Buzz, el ayudante de Beahive',
+  'chat.title': 'Buzz',
+  'chat.subtitle': 'Tu vecino de la colmena',
+  'chat.close': 'Cerrar chat',
+  'chat.emptyTitle': 'Hola, soy Buzz.',
+  'chat.emptyBody':
+    'Te puedo ayudar a encontrar comida fresca hoy o a empezar a cultivar en casa. Pregúntame lo que quieras.',
+  'chat.placeholder': 'Escribe un mensaje…',
+  'chat.inputLabel': 'Mensaje',
+  'chat.send': 'Enviar',
+  'chat.thinking': 'Buzz está pensando',
+  'chat.errorGeneric':
+    'Hubo un problema para conectar con Buzz.',
+  'chat.errorEmpty':
+    'Buzz no envió respuesta. Intenta preguntar de otra manera.',
 }

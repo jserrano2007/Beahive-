@@ -642,4 +642,22 @@ export default {
   'garden.sensor.offlineHint':
     'The sensor stopped reporting. Check that it has power and the app has internet.',
   'garden.sensor.offlineShort': 'Offline',
+
+  // Chat (Buzz)
+  'chat.openLabel': 'Ask Buzz',
+  'chat.openAria': 'Open chat with Buzz, the Beahive helper',
+  'chat.title': 'Buzz',
+  'chat.subtitle': 'Your neighbor from the hive',
+  'chat.close': 'Close chat',
+  'chat.emptyTitle': 'Hi, I’m Buzz.',
+  'chat.emptyBody':
+    'I can help you find fresh food today or figure out how to grow a little of your own. Ask me anything.',
+  'chat.placeholder': 'Type a message…',
+  'chat.inputLabel': 'Message',
+  'chat.send': 'Send',
+  'chat.thinking': 'Buzz is thinking',
+  'chat.errorGeneric':
+    'Something went wrong reaching Buzz.',
+  'chat.errorEmpty':
+    'Buzz didn’t send a reply. Try asking again in a different way.',
 }

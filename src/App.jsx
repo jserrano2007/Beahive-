@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import BeahiveLogo from './components/BeahiveLogo'
+import ChatFab from './components/ChatFab'
 import TabBar from './components/TabBar'
 import FindFoodTab from './components/FindFoodTab'
 import SellTab from './components/SellTab'
@@ -622,6 +623,8 @@ function App() {
           onResetDemoData={handleResetDemoData}
           onClearAllData={handleClearAllData}
         />
+
+        <ChatFab />
       </div>
     </I18nProvider>
   )
