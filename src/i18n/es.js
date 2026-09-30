@@ -667,4 +667,5 @@ export default {
     'Hubo un problema para conectar con Buzz.',
   'chat.errorEmpty':
     'Buzz no envió respuesta. Intenta preguntar de otra manera.',
+  'chat.actionsAria': 'Acciones rápidas',
 }

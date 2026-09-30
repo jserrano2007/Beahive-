@@ -631,6 +631,9 @@ function App() {
           devices={devices}
           account={account}
           now={now}
+          onOpenTab={(tab) => {
+            if (isValidTab(account, tab)) setActiveTab(tab)
+          }}
         />
       </div>
     </I18nProvider>

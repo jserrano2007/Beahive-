@@ -660,4 +660,5 @@ export default {
     'Something went wrong reaching Buzz.',
   'chat.errorEmpty':
     'Buzz didn’t send a reply. Try asking again in a different way.',
+  'chat.actionsAria': 'Quick actions',
 }

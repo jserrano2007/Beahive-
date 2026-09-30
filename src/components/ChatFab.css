@@ -202,6 +202,49 @@
   border-bottom-right-radius: 6px;
 }
 
+.chat-msg-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chat-msg-group-user {
+  align-items: flex-end;
+}
+
+.chat-msg-group-assistant {
+  align-items: flex-start;
+}
+
+.chat-msg-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 82%;
+}
+
+.chat-action-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--primary);
+  background: var(--surface-card);
+  color: var(--primary-strong);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-1);
+}
+
+.chat-action-btn:hover,
+.chat-action-btn:focus-visible {
+  background: var(--primary-soft);
+}
+
 .chat-msg-assistant {
   align-self: flex-start;
   background: var(--surface-card);

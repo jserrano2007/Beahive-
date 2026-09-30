@@ -8,6 +8,45 @@ function toAnthropicMessages(messages) {
   return messages.map((m) => ({ role: m.role, content: m.text }))
 }
 
+// Buzz can end a reply with a single "[[ACTIONS]] [ ... ]" line. Split the text
+// portion from the parsed actions, keep only known safe types, and cap at 3.
+const ALLOWED_TABS = new Set(['find', 'grow', 'garden', 'sell'])
+
+function parseReply(raw) {
+  if (!raw) return { text: '', actions: [] }
+  const match = raw.match(/\[\[ACTIONS\]\]\s*(\[[\s\S]*\])\s*$/)
+  if (!match) return { text: raw.trim(), actions: [] }
+  const text = raw.slice(0, match.index).trim()
+  let actions = []
+  try {
+    const parsed = JSON.parse(match[1])
+    if (Array.isArray(parsed)) {
+      actions = parsed
+        .filter((a) => a && typeof a === 'object' && typeof a.type === 'string')
+        .filter((a) => {
+          if (a.type === 'open_tab') return ALLOWED_TABS.has(a.tab)
+          if (a.type === 'directions') return typeof a.address === 'string' && a.address.length > 0
+          if (a.type === 'call') return /^[+\d\-() ]{3,20}$/.test(String(a.phone || ''))
+          return false
+        })
+        .slice(0, 3)
+    }
+  } catch {
+    // Ignore malformed action blocks; show the text only.
+  }
+  return { text, actions }
+}
+
+function actionHref(action) {
+  if (action.type === 'directions') {
+    return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(action.address)}`
+  }
+  if (action.type === 'call') {
+    return `tel:${String(action.phone).replace(/[^\d+]/g, '')}`
+  }
+  return null
+}
+
 function ChatFab({
   places = [],
   listings = [],
@@ -15,6 +54,7 @@ function ChatFab({
   devices = [],
   account = {},
   now = new Date(),
+  onOpenTab,
 }) {
   const { t, lang } = useI18n()
   const [open, setOpen] = useState(false)
@@ -104,9 +144,10 @@ function ChatFab({
       if (!response.ok) {
         throw new Error(data.error || `HTTP ${response.status}`)
       }
-      const reply = (data.text || '').trim()
-      if (!reply) throw new Error('empty')
-      setMessages((prev) => [...prev, { role: 'assistant', text: reply }])
+      const rawReply = (data.text || '').trim()
+      const { text: reply, actions } = parseReply(rawReply)
+      if (!reply && actions.length === 0) throw new Error('empty')
+      setMessages((prev) => [...prev, { role: 'assistant', text: reply, actions }])
     } catch (err) {
       if (err.message === 'empty') {
         setError(t('chat.errorEmpty'))
@@ -208,11 +249,53 @@ function ChatFab({
             </div>
           )}
           <ul className="chat-messages" aria-live="polite" aria-relevant="additions">
-            {messages.map((msg, idx) => (
-              <li key={idx} className={`chat-msg chat-msg-${msg.role}`}>
-                {msg.text}
-              </li>
-            ))}
+            {messages.map((msg, idx) => {
+              const actions = msg.actions || []
+              return (
+                <li key={idx} className={`chat-msg-group chat-msg-group-${msg.role}`}>
+                  {msg.text && (
+                    <div className={`chat-msg chat-msg-${msg.role}`}>{msg.text}</div>
+                  )}
+                  {actions.length > 0 && (
+                    <div className="chat-msg-actions" role="group" aria-label={t('chat.actionsAria')}>
+                      {actions.map((action, aIdx) => {
+                        const href = actionHref(action)
+                        const label = action.label || action.type
+                        const commonProps = {
+                          className: 'chat-action-btn',
+                        }
+                        if (action.type === 'open_tab') {
+                          return (
+                            <button
+                              key={aIdx}
+                              type="button"
+                              {...commonProps}
+                              onClick={() => {
+                                if (onOpenTab) onOpenTab(action.tab)
+                                closeSheet()
+                              }}
+                            >
+                              {label}
+                            </button>
+                          )
+                        }
+                        return (
+                          <a
+                            key={aIdx}
+                            {...commonProps}
+                            href={href}
+                            target={action.type === 'directions' ? '_blank' : undefined}
+                            rel={action.type === 'directions' ? 'noopener noreferrer' : undefined}
+                          >
+                            {label}
+                          </a>
+                        )
+                      })}
+                    </div>
+                  )}
+                </li>
+              )
+            })}
             {sending && (
               <li className="chat-msg chat-msg-assistant chat-msg-typing" aria-label={t('chat.thinking')}>
                 <span className="chat-dot" />
